@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Daily Tidy">
+<meta name="theme-color" content="#FFF8F1">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>The Daily Tidy</title>
+<style>
+:root{
+  --coral:#FFB5A7; --coral-d:#E07463;
+  --lav:#D9C9F8;   --lav-d:#8A6BD0;
+  --butter:#FFEAA8;--butter-d:#C9951A;
+  --turq:#A8E8E3;  --turq-d:#24978E;
+  --mint:#C2F0D2;  --mint-d:#35A161;
+  --bg:#FFF8F1; --ink:#4A3F55; --soft:#8D8296; --card:#FFFFFF; --chip:#F6EEE7;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  padding:calc(env(safe-area-inset-top) + 18px) 18px calc(env(safe-area-inset-bottom) + 104px);
+  max-width:520px;margin:0 auto;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+input{font:inherit;color:inherit}
+
+header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+h1{font-size:31px;margin:0;letter-spacing:-.5px}
+h1 span{background:linear-gradient(90deg,var(--coral-d),var(--lav-d));-webkit-background-clip:text;background-clip:text;color:transparent}
+.date{color:var(--soft);font-size:15px;margin-top:2px}
+.logo{font-size:34px;line-height:1}
+
+.card{background:var(--card);border-radius:24px;padding:16px 18px;box-shadow:0 4px 18px rgba(120,90,80,.07);margin-bottom:14px}
+.card-title{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.card-title .ico{font-size:22px;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;flex:none}
+.card-title b{display:block;font-size:16px}
+.card-title small{color:var(--soft);font-size:13px}
+.progress-top{display:flex;justify-content:space-between;align-items:baseline}
+.progress-top b{font-size:18px}
+.progress-top small{color:var(--soft);font-size:14px}
+.bar{height:14px;border-radius:99px;background:var(--chip);margin:12px 0 10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.3,1.4,.5,1);
+  background:linear-gradient(90deg,var(--coral),var(--butter),var(--mint),var(--turq),var(--lav))}
+.dots{display:flex;gap:7px}
+.dots span{flex:1;text-align:center;font-size:12px;color:var(--soft);padding:6px 0;border-radius:12px;background:#FAF4EE;white-space:nowrap}
+.dots span.on{background:var(--mint);color:#2C6B45;font-weight:600}
+.cheer{font-size:15px;color:var(--soft);margin:10px 0 0}
+
+.toggle-row{display:flex;align-items:center;gap:12px}
+.toggle-row .txt{flex:1}
+.toggle-row b{display:block;font-size:16px}
+.toggle-row small{color:var(--soft);font-size:13px}
+.switch{width:54px;height:32px;border-radius:99px;background:#EDE5DD;position:relative;transition:background .25s;flex:none}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.15);transition:transform .25s}
+.switch.on{background:var(--lav-d)}
+.switch.on::after{transform:translateX(22px)}
+.low-on{background:linear-gradient(135deg,#F4EEFF,#FFF4F8)}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.tidy{border-radius:26px;padding:16px;min-height:150px;text-align:left;display:flex;flex-direction:column;
+  position:relative;box-shadow:0 4px 18px rgba(120,90,80,.08);transition:transform .15s}
+.tidy:active{transform:scale(.97)}
+.tidy .emo{font-size:36px;line-height:1}
+.tidy .name{font-size:19px;font-weight:700;margin-top:auto}
+.tidy .meta{font-size:13px;opacity:.78;margin-top:2px}
+.tidy .mini{height:7px;border-radius:9px;background:rgba(255,255,255,.6);margin-top:9px;overflow:hidden}
+.tidy .mini i{display:block;height:100%;background:rgba(74,63,85,.4);border-radius:9px;transition:width .4s}
+.tidy .badge{position:absolute;top:12px;right:12px;font-size:12px;font-weight:700;padding:4px 9px;border-radius:99px;background:rgba(255,255,255,.75)}
+.tidy.done .badge{background:#fff;color:var(--mint-d)}
+.tidy.next{outline:3px solid rgba(255,255,255,.95);box-shadow:0 0 0 6px rgba(138,107,208,.18),0 6px 20px rgba(120,90,80,.12)}
+
+/* Laundry */
+.ask{display:flex;gap:8px;margin-top:4px}
+.ask button{flex:1;padding:13px 8px;border-radius:16px;font-weight:700;font-size:15px}
+.ask .yes{background:var(--turq);color:#1F5E59}
+.ask .no{background:var(--chip);color:var(--ink);font-weight:600}
+.stages{display:flex;gap:4px;margin:4px 0 10px}
+.stages div{flex:1;text-align:center;font-size:11px;color:var(--soft);padding:8px 0 6px;border-radius:14px;background:#FAF4EE;transition:all .3s}
+.stages div span{display:block;font-size:21px;margin-bottom:2px;filter:grayscale(.7);opacity:.55;transition:all .3s}
+.stages div.on{background:#E6F8F5;color:#1F5E59;font-weight:600}
+.stages div.on span{filter:none;opacity:1}
+.stages div.cur{background:var(--turq);color:#1F5E59;font-weight:700}
+.stages div.cur span{filter:none;opacity:1}
+.laundry-next{font-size:14px;color:var(--soft);margin:0}
+.link{color:var(--soft);font-size:13px;text-decoration:underline;padding:6px 0 0}
+
+/* To-dos */
+.todo{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #F5ECE4}
+.todo:first-of-type{border-top:0}
+.todo .tbtn{display:flex;align-items:center;gap:12px;flex:1;text-align:left;font-size:16px;line-height:1.3}
+.todo .del{color:#C7BBC9;font-size:15px;width:32px;height:32px;border-radius:10px}
+.todo.on .t{color:var(--soft);text-decoration:line-through}
+.addrow{display:flex;gap:8px;margin-top:10px}
+.addrow input{flex:1;min-width:0;border:2px dashed #E7DBD0;background:#FFFCF9;border-radius:15px;padding:11px 13px;font-size:16px;outline:none}
+.addrow input:focus{border-color:var(--lav-d);border-style:solid;background:#fff}
+.addrow button{flex:none;padding:0 16px;border-radius:15px;background:var(--lav);color:#4B3680;font-weight:700;font-size:15px}
+.hint{color:var(--soft);font-size:13px;margin:8px 0 0}
+
+.fresh{display:block;margin:6px auto 0;color:var(--soft);font-size:14px;padding:10px 16px;border-radius:99px;background:#F7EFE8}
+
+/* Checkboxes (shared) */
+.box{width:28px;height:28px;border-radius:10px;border:2.5px solid #E2D6CB;flex:none;display:grid;place-items:center;transition:all .2s;color:#fff;font-size:16px;font-weight:800;background:#fff}
+.on .box{background:var(--mint-d);border-color:var(--mint-d)}
+
+/* Sheets */
+.overlay{position:fixed;inset:0;background:rgba(74,63,85,.28);opacity:0;pointer-events:none;transition:opacity .25s;z-index:20}
+.overlay.show{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-width:520px;margin:0 auto;background:var(--bg);border-radius:30px 30px 0 0;
+  max-height:90vh;overflow:auto;transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.9,.3,1);z-index:21;
+  padding:10px 18px calc(env(safe-area-inset-bottom) + 20px)}
+.sheet.show{transform:none}
+.grab{width:42px;height:5px;border-radius:9px;background:#E3D8CE;margin:0 auto 12px}
+.sheet-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sheet-head .emo{font-size:30px;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;flex:none}
+.sheet-head h2{margin:0;font-size:23px}
+.sheet-head small{color:var(--soft)}
+.x{margin-left:auto;width:36px;height:36px;border-radius:50%;background:#F1E8E0;font-size:18px;color:var(--soft);flex:none}
+.note{border-radius:18px;padding:12px 14px;font-size:14px;margin-bottom:12px;line-height:1.4}
+.sub{font-size:13px;font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.6px;margin:16px 4px 8px}
+.items{list-style:none;margin:0;padding:0}
+.item{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border-radius:18px;padding:15px 14px;margin-bottom:9px;
+  font-size:16px;line-height:1.3;box-shadow:0 2px 8px rgba(120,90,80,.05);transition:background .2s}
+.item.laundry{background:#F2FCFB}
+.item.on{background:#F4FBF6}
+.item.on .t{color:var(--soft);text-decoration:line-through;text-decoration-color:rgba(141,130,150,.5)}
+.sheet-foot{display:flex;gap:10px;margin-top:10px}
+.btn{flex:1;padding:15px;border-radius:18px;font-weight:700;font-size:16px;background:var(--ink);color:#fff}
+.btn.ghost{background:#F1E8E0;color:var(--ink);font-weight:600}
+.btn.warm{background:var(--coral-d)}
+.empty-note{color:var(--soft);font-size:14px;padding:4px 4px 8px}
+
+/* Settings */
+.segs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.segs button{padding:12px 8px;border-radius:16px;background:#fff;font-weight:600;font-size:15px;box-shadow:0 2px 8px rgba(120,90,80,.05)}
+.segs button.on{background:var(--ink);color:#fff}
+.row{display:flex;align-items:center;gap:6px;background:#fff;border-radius:16px;padding:4px 6px 4px 14px;margin-bottom:8px;box-shadow:0 2px 8px rgba(120,90,80,.04)}
+.row input{flex:1;min-width:0;border:0;background:transparent;font-size:16px;padding:10px 0;outline:none}
+.row input:focus{color:#000}
+.mbtn{width:36px;height:36px;border-radius:12px;background:#FAF4EE;color:var(--soft);font-size:15px;flex:none}
+.mbtn.del{color:var(--coral-d)}
+.mbtn[disabled]{opacity:.3}
+.sec-card{background:#FFFDFB;border-radius:22px;padding:12px 12px 14px;margin-bottom:14px;border:1.5px solid #F4EAE1}
+.sec-card h3{margin:2px 4px 10px;font-size:16px;display:flex;align-items:center;gap:8px}
+.sec-card .addrow{margin-top:2px}
+
+/* Tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(255,252,248,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid #F1E6DC;padding:8px 24px calc(env(safe-area-inset-bottom) + 8px);display:flex;gap:10px;justify-content:center}
+.tabbar button{flex:1;max-width:200px;padding:9px 0 7px;border-radius:16px;font-size:12px;font-weight:600;color:var(--soft);display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabbar button span{font-size:22px;line-height:1}
+.tabbar button.on{background:#F3EDFF;color:#4B3680}
+
+/* Toast + celebration */
+.toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 12px);transform:translate(-50%,-160px);background:var(--ink);color:#fff;
+  padding:13px 20px;border-radius:99px;font-size:15px;z-index:50;transition:transform .35s cubic-bezier(.2,1.3,.4,1);white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis}
+.toast.show{transform:translate(-50%,0)}
+.party{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:rgba(255,248,241,.86);opacity:0;pointer-events:none;transition:opacity .3s}
+.party.show{opacity:1;pointer-events:auto}
+.party .pc{background:#fff;border-radius:30px;padding:30px 24px;text-align:center;width:min(86vw,360px);box-shadow:0 10px 40px rgba(120,90,80,.15)}
+.party .big{font-size:56px}
+.party h3{font-size:24px;margin:8px 0 6px}
+.party p{color:var(--soft);margin:0 0 18px;line-height:1.45}
+.confetti{position:fixed;top:-20px;width:10px;height:14px;border-radius:3px;z-index:45;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+
+/* v3: tidy management */
+.dots{flex-wrap:wrap}
+.dots span{flex:1 1 0;min-width:68px;padding:6px 6px}
+.trow{display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid #F5ECE4}
+.trow:first-of-type{border-top:0}
+.trow .tmain{flex:1;display:flex;align-items:center;gap:12px;text-align:left;min-width:0}
+.trow .temo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px;flex:none}
+.trow.off .temo{filter:grayscale(1);opacity:.45}
+.trow.off b{color:var(--soft)}
+.trow b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trow small{color:var(--soft);font-size:13px}
+.addtidy{width:100%;padding:14px;border-radius:18px;border:2.5px dashed #E2D6CB;color:var(--soft);font-weight:600;margin-top:8px}
+.lbl{display:block;font-size:12px;font-weight:700;color:var(--soft);margin:14px 4px 7px;text-transform:uppercase;letter-spacing:.6px}
+.lbl:first-child{margin-top:2px}
+.textin{width:100%;border:2px solid #F1E6DC;border-radius:15px;padding:12px 14px;font-size:17px;background:#fff;outline:none;-webkit-appearance:none;appearance:none}
+.textin:focus{border-color:var(--lav-d)}
+.emojis{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.emojis button{aspect-ratio:1;border-radius:12px;background:#FAF4EE;font-size:20px;padding:0}
+.emojis button.on{background:var(--lav);box-shadow:inset 0 0 0 2px var(--lav-d)}
+.colors{display:flex;gap:12px;padding-left:2px}
+.colors button{width:40px;height:40px;border-radius:50%}
+.colors button.on{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ink)}
+.whens{display:flex;flex-wrap:wrap;gap:6px}
+.whens button{padding:9px 12px;border-radius:99px;background:#FAF4EE;font-size:14px;font-weight:600;color:var(--soft)}
+.whens button.on{background:var(--ink);color:#fff}
+.backbtn{color:var(--lav-d);font-weight:700;font-size:16px;padding:6px 0;margin-bottom:6px}
+.danger{display:block;width:100%;padding:14px;border-radius:18px;background:#FFEDEA;color:var(--coral-d);font-weight:700;margin:4px 0 12px}
+.share-note{display:flex;gap:10px;align-items:center}
+.share-note button{flex:none;padding:8px 12px;border-radius:12px;background:#fff;font-size:13px;font-weight:700;color:#4B3680}
+.empty-tidies{text-align:center;color:var(--soft);padding:24px 10px}
+.empty-tidies div{font-size:40px;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<nav class="tabbar">
+  <button data-act="tab" data-tab="today" id="tab-today"><span>🌷</span>Today</button>
+  <button data-act="tab" data-tab="settings" id="tab-settings"><span>⚙️</span>Settings</button>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+<div class="sheet" id="sheet"></div>
+<div class="toast" id="toast"></div>
+<div class="party" id="party"><div class="pc">
+  <div class="big">🌈</div>
+  <h3>Every tidy, done!</h3>
+  <p>A few little minutes at a time, and look how cozy everything feels. Go put your feet up — you earned it.</p>
+  <button class="btn" data-act="party-close" style="width:100%">Yay! 💛</button>
+</div></div>
+
+<script>
+/* ================= Defaults (everything is editable in Settings) ================= */
+const DEFAULT_LISTS = {
+  morning: {
+    full: ["Make the bed","Put dirty clothes in the hamper","Put away clean laundry waiting to be put away",
+           "Open curtains and blinds","Wipe bathroom sink and counter","Put away toiletries and straighten towels"],
+    low:  ["Open the curtains and blinds — let the daylight in","Make the bed","Put dirty clothes in the hamper"]
+  },
+  walk: { // shared by Lunch and After Work
+    full: ["Do a quick walkthrough of the house","Put misplaced items back where they belong","Clear off cluttered surfaces",
+           "Take care of accumulated dishes and kitchen mess","Throw away obvious trash",
+           "Check floors and pick up anything that needs attention","Return shared spaces to a comfortable state"],
+    low:  ["Throw away five pieces of trash","Put five things away","Collect dishes and bring them to the kitchen"]
+  },
+  bedtime: {
+    full: ["Load dishwasher and start it if full","Wash dishes that can't go in the dishwasher","Wipe kitchen counters",
+           "Put away food and ingredients","Straighten living room and put away dog toys","Set out clothes for tomorrow",
+           "Prepare coffee, breakfast or anything needed for the morning"],
+    low:  ["Set out clothes for tomorrow","Prep coffee or breakfast for the morning","Bring dishes to the kitchen and load what fits"]
+  }
+};
+const DEFAULT_TIDIES = [
+  {id:"morning", name:"Morning",    emoji:"☀️", color:"butter", when:"morning",   list:"morning", laundry:["Gather dirty laundry and start a load in the washer"]},
+  {id:"lunch",   name:"Lunch",      emoji:"🥪", color:"turq",   when:"midday",    list:"walk",    laundry:["Move laundry to the dryer"]},
+  {id:"after",   name:"After Work", emoji:"🏡", color:"coral",  when:"afternoon", list:"walk",    laundry:["Take laundry out of the dryer and fold it"]},
+  {id:"bedtime", name:"Bedtime",    emoji:"🌙", color:"lav",    when:"night",     list:"bedtime", laundry:["Put clean laundry away, or place it in the folding basket"]},
+];
+
+const COLORS = {
+  butter:{bg:"#FFEAA8", ink:"#6B5414"}, turq:{bg:"#A8E8E3", ink:"#1F5E59"}, coral:{bg:"#FFB5A7", ink:"#7A3328"},
+  lav:{bg:"#D9C9F8", ink:"#4B3680"},    mint:{bg:"#C2F0D2", ink:"#2C6B45"}
+};
+const WHENS = [["morning","Morning",5],["midday","Midday",11],["afternoon","Afternoon",15],["evening","Evening",18],["night","Night",20]];
+const whenHour  = w => (WHENS.find(x=>x[0]===w) || WHENS[0])[2];
+const whenLabel = w => (WHENS.find(x=>x[0]===w) || WHENS[0])[1];
+const EMOJIS = ["☀️","🥪","🏡","🌙","✨","🌷","🧹","🧺","🍽️","🛁","🐶","🌿","☕","📚","🪴","💫"];
+const STAGES = [{name:"Hamper",emoji:"🧺"},{name:"Washer",emoji:"🫧"},{name:"Dryer",emoji:"🌀"},{name:"Folding",emoji:"👕"},{name:"Put Away",emoji:"🗄️"}];
+
+const TIDY_CHEERS = ["Lovely! That tidy is done 🌷","Look at you go! ✨","Ten minutes well spent 💛","That feels better already 🌈","Done and dusted! 🌼","Nicely done — enjoy it 🌸"];
+const LOW_CHEERS  = ["Small steps count — nice work 💜","Gentle progress is real progress 🌙","You showed up, and that matters 💛"];
+function dayLine(d, n){
+  if (n === 0) return "Add a tidy in Settings to get started.";
+  if (d === 0) return "Ready when you are — any tidy is a good place to start.";
+  if (d >= n)  return "Every tidy done today. Enjoy your cozy space! 🌈";
+  if (n - d === 1) return "Just one more whenever you're ready.";
+  if (d >= n/2) return "Halfway there — and doing great.";
+  return "One down! Things already feel a bit lighter.";
+}
+
+/* ================= State ================= */
+const KEY = "dailyTidy.v3", OLD_KEY = "dailyTidy.v2";
+const todayKey = () => { const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); };
+let state;
+const newId = () => "t" + (state.nextId++);
+const mk = arr => arr.map(text => ({id:newId(), text}));
+
+function buildDefaults(){
+  state.lists = {};
+  for (const [k,v] of Object.entries(DEFAULT_LISTS)) state.lists[k] = {full:mk(v.full), low:mk(v.low)};
+  state.tidies = DEFAULT_TIDIES.map(t => ({...t, active:true, laundry:mk(t.laundry)}));
+}
+function freshState(){
+  state = {v:3, nextId:1, date:todayKey(), checks:{}, low:false, laundry:null, partyShown:false, todos:[]};
+  buildDefaults();
+}
+function migrateV2(o){
+  // Keep anything from the previous version: tasks, to-dos and today's checkmarks
+  state = {v:3, nextId:o.nextId||1, date:o.date, checks:o.checks||{}, low:!!o.low, laundry:o.laundry ?? null,
+           partyShown:!!o.partyShown, todos:o.todos||[]};
+  state.lists = {morning:o.tasks.morning, walk:o.tasks.walk, bedtime:o.tasks.bedtime};
+  state.tidies = DEFAULT_TIDIES.map(t => ({...t, active:true, laundry:o.tasks.laundry[t.id] || []}));
+}
+function load(){
+  let s = null, old = null;
+  try { s = JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+  if (s && s.v === 3) state = s;
+  else {
+    try { old = JSON.parse(localStorage.getItem(OLD_KEY)); } catch(e) {}
+    if (old && old.v === 2 && old.tasks) migrateV2(old); else freshState();
+    save();
+  }
+  rollover();
+}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
+
+function startNewDay(){
+  state.date = todayKey();
+  state.checks = {};                               // yesterday's ticks never carry over
+  state.laundry = null;                            // ask about laundry again
+  state.partyShown = false;
+  state.todos = state.todos.filter(t => !t.done);  // finished to-dos clear; unfinished ones stay
+  save();
+}
+function rollover(){ if (state.date !== todayKey()){ startNewDay(); return true; } return false; }
+
+/* ================= Helpers ================= */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const tidy = id => state.tidies.find(t => t.id === id);
+const active = () => state.tidies.filter(t => t.active);
+const col = t => COLORS[t.color] || COLORS.mint;
+const checksOf = tid => (state.checks[tid] = state.checks[tid] || []);
+const isOn = (tid, k) => (state.checks[tid] || []).includes(k);
+const allOn = (tid, arr) => arr.length > 0 && arr.every(x => isOn(tid, x.id));
+const listOf = t => state.lists[t.list] || (state.lists[t.list] = {full:[], low:[]});
+
+const mainList    = t => { const L = listOf(t); return state.low && L.low.length ? L.low : L.full; };
+const laundryList = t => state.laundry === true ? t.laundry : [];
+const visibleList = t => mainList(t).concat(laundryList(t));
+function isDone(t){
+  const L = listOf(t), l = laundryList(t);
+  return (l.length === 0 || allOn(t.id, l)) && (allOn(t.id, L.full) || allOn(t.id, L.low));
+}
+function countFor(t){ const l = visibleList(t); return [l.filter(x => isOn(t.id, x.id)).length, l.length]; }
+const doneCount = () => active().filter(isDone).length;
+
+function laundrySteps(){ return active().flatMap(t => t.laundry.map(x => ({t, x}))); }
+function laundryStage(){
+  const steps = laundrySteps(), done = steps.filter(s => isOn(s.t.id, s.x.id)).length;
+  if (!steps.length) return 0;
+  return done === steps.length ? 4 : Math.min(3, Math.floor(done * 4 / steps.length));
+}
+function laundryNext(){ return laundrySteps().find(s => !isOn(s.t.id, s.x.id)); }
+
+function upNext(){
+  const list = active(), h = new Date().getHours();
+  let start = 0;
+  list.forEach((t,i) => { if (whenHour(t.when) <= h) start = i; });
+  for (let i = start; i < list.length; i++) if (!isDone(list[i])) return list[i].id;
+  return null;
+}
+const sharedWith = t => state.tidies.filter(o => o !== t && o.list === t.list);
+
+/* ================= Today tab ================= */
+function laundryCard(){
+  if (!laundrySteps().length) return "";
+  if (state.laundry === null) return `
+    <div class="card">
+      <div class="card-title"><div class="ico" style="background:var(--turq)">🧺</div>
+        <div><b>Laundry today?</b><small>One load, spread across your tidies.</small></div></div>
+      <div class="ask">
+        <button class="yes" data-act="laundry-yes">Yes, one load</button>
+        <button class="no" data-act="laundry-no">Not today</button>
+      </div>
+    </div>`;
+  if (state.laundry === false) return `
+    <div class="card">
+      <div class="card-title" style="margin-bottom:0"><div class="ico" style="background:var(--chip)">🌤️</div>
+        <div style="flex:1"><b>No laundry today</b><small>Enjoy the break!</small></div>
+        <button class="link" data-act="laundry-reask">Change</button></div>
+    </div>`;
+  const s = laundryStage(), next = laundryNext();
+  return `
+    <div class="card">
+      <div class="card-title"><div class="ico" style="background:var(--turq)">🧺</div>
+        <div style="flex:1"><b>${s === 4 ? "Laundry's all done! 🎉" : "Today's load"}</b>
+        <small>${s === 4 ? "Clean, folded and put away." : "Steps are built into each tidy."}</small></div>
+        <button class="link" data-act="laundry-reask">Change</button></div>
+      <div class="stages">${STAGES.map((st,i)=>`<div class="${i < s || s === 4 ? "on" : i === s ? "cur" : ""}"><span>${st.emoji}</span>${st.name}</div>`).join("")}</div>
+      ${next ? `<p class="laundry-next">Next, at ${esc(next.t.name)}: ${esc(next.x.text)}</p>` : ""}
+    </div>`;
+}
+
+function todoCard(){
+  const list = state.todos;
+  return `
+    <div class="card">
+      <div class="card-title"><div class="ico" style="background:var(--lav)">📝</div>
+        <div><b>To-dos</b><small>These stay put until you check them off.</small></div></div>
+      ${list.map(t => `
+        <div class="todo ${t.done?"on":""}">
+          <button class="tbtn" data-act="todo" data-id="${t.id}"><span class="box">${t.done?"✓":""}</span><span class="t">${esc(t.text)}</span></button>
+          <button class="del" data-act="todo-del" data-id="${t.id}" aria-label="Delete">✕</button>
+        </div>`).join("")}
+      <div class="addrow">
+        <input id="todo-input" placeholder="Add a to-do…" autocomplete="off" enterkeyhint="done" data-enter="add-todo">
+        <button data-act="add-todo">Add</button>
+      </div>
+      ${list.some(t=>t.done) ? `<p class="hint">Checked items clear away tomorrow.</p>` : ""}
+    </div>`;
+}
+
+function renderToday(){
+  const list = active(), d = doneCount(), n = list.length;
+  const dateStr = new Date().toLocaleDateString(undefined,{weekday:"long", month:"long", day:"numeric"});
+  const next = upNext();
+  return `
+    <header>
+      <div><h1><span>The Daily Tidy</span></h1><div class="date">${dateStr}</div></div>
+      <div class="logo">🧺</div>
+    </header>
+
+    <div class="card">
+      <div class="progress-top"><b>${d} of ${n} tid${n===1?"y":"ies"}</b><small>${n ? Math.round(d/n*100) : 0}%</small></div>
+      <div class="bar"><i style="width:${n ? d/n*100 : 0}%"></i></div>
+      <div class="dots">${list.map(t=>`<span class="${isDone(t)?"on":""}">${isDone(t)?"✓ ":""}${esc(t.name)}</span>`).join("")}</div>
+      <p class="cheer">${dayLine(d, n)}</p>
+    </div>
+
+    ${laundryCard()}
+
+    <div class="card ${state.low?"low-on":""}">
+      <div class="toggle-row">
+        <div style="font-size:26px">${state.low?"🌙":"🔋"}</div>
+        <div class="txt"><b>Low-energy mode</b><small>${state.low?"Just the essentials. Be kind to yourself.":"Need an easier day? Switch to a few gentle tasks."}</small></div>
+        <button class="switch ${state.low?"on":""}" data-act="low" aria-label="Low-energy mode"></button>
+      </div>
+    </div>
+
+    ${n ? `<div class="grid">
+      ${list.map(t=>{ const [c,m]=countFor(t), done=isDone(t), C=col(t); return `
+        <button class="tidy ${done?"done":""} ${next===t.id?"next":""}" style="background:${C.bg};color:${C.ink}" data-act="open" data-id="${t.id}">
+          <span class="badge">${done?"✓ Done":next===t.id?"Up next":c+"/"+m}</span>
+          <span class="emo">${t.emoji}</span>
+          <span class="name">${esc(t.name)}</span>
+          <span class="meta">${done?"All tidy 💛":m?"About 10 minutes":"Add tasks in Settings"}</span>
+          <span class="mini"><i style="width:${done?100:(m?c/m*100:0)}%"></i></span>
+        </button>`;}).join("")}
+    </div>` : `<div class="card empty-tidies"><div>🌱</div>No tidies are turned on right now.<br>
+      <button class="link" data-act="tab" data-tab="settings">Go to Settings</button></div>`}
+
+    ${todoCard()}
+
+    <button class="fresh" data-act="fresh">↺ Start a fresh day</button>`;
+}
+
+/* ================= Settings tab ================= */
+let editing = null;   // null = list of tidies, otherwise a tidy id
+
+// path format: "full:<tidyId>" | "low:<tidyId>" | "laundry:<tidyId>"
+function getList(path){
+  const [kind, tid] = path.split(":"), t = tidy(tid);
+  if (!t) return [];
+  return kind === "laundry" ? t.laundry : listOf(t)[kind];
+}
+
+function taskSection(title, hint, path){
+  const list = getList(path);
+  return `
+    <div class="sec-card">
+      <h3>${title}</h3>
+      ${hint ? `<div class="empty-note" style="margin-top:-6px">${hint}</div>` : ""}
+      ${list.map((x,i)=>`
+        <div class="row">
+          <input value="${esc(x.text)}" data-edit="${path}" data-id="${x.id}" aria-label="Task" enterkeyhint="done">
+          <button class="mbtn" data-act="up" data-path="${path}" data-id="${x.id}" ${i===0?"disabled":""} aria-label="Move up">↑</button>
+          <button class="mbtn del" data-act="del" data-path="${path}" data-id="${x.id}" aria-label="Delete">✕</button>
+        </div>`).join("")}
+      <div class="addrow">
+        <input id="add-${path.replace(":","-")}" placeholder="Add a task…" autocomplete="off" enterkeyhint="done" data-enter="add-task" data-path="${path}">
+        <button data-act="add-task" data-path="${path}">Add</button>
+      </div>
+    </div>`;
+}
+
+function renderTidyList(){
+  const all = state.tidies;
+  return `
+    <header><div><h1><span>Settings</span></h1><div class="date">Make your tidies fit your home.</div></div><div class="logo">⚙️</div></header>
+    <div class="card">
+      <div class="card-title"><div class="ico" style="background:var(--mint)">🗂️</div>
+        <div><b>Your tidies</b><small>Tap one to rename it or change its tasks.</small></div></div>
+      ${all.map((t,i)=>`
+        <div class="trow ${t.active?"":"off"}">
+          <button class="mbtn" data-act="tidy-up" data-id="${t.id}" ${i===0?"disabled":""} aria-label="Move up">↑</button>
+          <button class="tmain" data-act="edit-tidy" data-id="${t.id}">
+            <span class="temo" style="background:${col(t).bg}">${t.emoji}</span>
+            <span style="min-width:0"><b>${esc(t.name)}</b><small>${t.active ? whenLabel(t.when) : "Turned off"}</small></span>
+          </button>
+          <button class="switch ${t.active?"on":""}" data-act="toggle-tidy" data-id="${t.id}" aria-label="Turn ${esc(t.name)} on or off"></button>
+        </div>`).join("")}
+      <button class="addtidy" data-act="add-tidy">+ Add a new tidy</button>
+      <p class="hint">Turn a tidy off to hide it for a while — its tasks are kept safe.</p>
+    </div>
+    <button class="fresh" data-act="restore">Restore the original tidies and tasks</button>`;
+}
+
+function renderTidyEditor(t){
+  const C = col(t), shared = sharedWith(t);
+  return `
+    <button class="backbtn" data-act="back-settings">‹ All tidies</button>
+    <header style="margin-bottom:12px"><div><h1><span>${esc(t.name) || "Untitled"}</span></h1>
+      <div class="date">${t.active ? "Showing on your Today screen" : "Turned off — hidden from Today"}</div></div>
+      <div class="logo">${t.emoji}</div></header>
+
+    <div class="card">
+      <span class="lbl">Name</span>
+      <input class="textin" id="tidy-name" value="${esc(t.name)}" data-field="name" data-id="${t.id}" placeholder="Name this tidy" enterkeyhint="done">
+      <span class="lbl">Icon</span>
+      <div class="emojis">${EMOJIS.map(e=>`<button class="${e===t.emoji?"on":""}" data-act="set-emoji" data-id="${t.id}" data-v="${e}">${e}</button>`).join("")}</div>
+      <span class="lbl">Color</span>
+      <div class="colors">${Object.entries(COLORS).map(([k,v])=>`<button class="${k===t.color?"on":""}" style="background:${v.bg}" data-act="set-color" data-id="${t.id}" data-v="${k}" aria-label="${k}"></button>`).join("")}</div>
+      <span class="lbl">Usually done in the</span>
+      <div class="whens">${WHENS.map(([k,l])=>`<button class="${k===t.when?"on":""}" data-act="set-when" data-id="${t.id}" data-v="${k}">${l}</button>`).join("")}</div>
+      <div class="toggle-row" style="margin-top:16px">
+        <div class="txt"><b>Show this tidy</b><small>Turn off to take a break from it.</small></div>
+        <button class="switch ${t.active?"on":""}" data-act="toggle-tidy" data-id="${t.id}" aria-label="Show this tidy"></button>
+      </div>
+    </div>
+
+    ${shared.length ? `<div class="note share-note" style="background:#F1EAFF">
+      <span style="flex:1">Shares its task list with <b>${shared.map(o=>esc(o.name)).join(", ")}</b>. Changes apply to both.</span>
+      <button data-act="own-list" data-id="${t.id}">Give it its own list</button></div>` : ""}
+
+    ${taskSection("Regular tasks", "", "full:"+t.id)}
+    ${taskSection("Low-energy tasks", "Shown when low-energy mode is on.", "low:"+t.id)}
+    ${taskSection("🧺 Laundry steps", "Only shown on days you say yes to laundry.", "laundry:"+t.id)}
+
+    <button class="danger" data-act="delete-tidy" data-id="${t.id}">Delete this tidy</button>`;
+}
+
+function renderSettings(){
+  const t = editing && tidy(editing);
+  if (!t) editing = null;
+  return t ? renderTidyEditor(t) : renderTidyList();
+}
+
+/* ================= Render ================= */
+let tab = "today";
+function render(){
+  document.getElementById("app").innerHTML = tab === "today" ? renderToday() : renderSettings();
+  document.getElementById("tab-today").classList.toggle("on", tab === "today");
+  document.getElementById("tab-settings").classList.toggle("on", tab === "settings");
+}
+
+/* ================= Sheets ================= */
+let openSheet = null;   // tidy id | confirm object
+const sheet = document.getElementById("sheet"), overlay = document.getElementById("overlay");
+function showSheet(){ sheet.classList.add("show"); overlay.classList.add("show"); }
+function closeSheet(){ sheet.classList.remove("show"); overlay.classList.remove("show"); openSheet = null; }
+
+function itemsHTML(t, list, extraClass){
+  return `<ul class="items">${list.map(x=>`
+    <li><button class="item ${extraClass} ${isOn(t.id,x.id)?"on":""}" data-act="check" data-id="${t.id}" data-k="${x.id}">
+      <span class="box">${isOn(t.id,x.id)?"✓":""}</span><span class="t">${esc(x.text)}</span>
+    </button></li>`).join("")}</ul>`;
+}
+function renderTidySheet(id){
+  const t = tidy(id);
+  if (!t){ closeSheet(); return; }
+  const [c,n] = countFor(t), done = isDone(t), lList = laundryList(t), C = col(t);
+  const askHere = state.laundry === null && active()[0] === t && laundrySteps().length;
+  sheet.innerHTML = `
+    <div class="grab"></div>
+    <div class="sheet-head">
+      <div class="emo" style="background:${C.bg}">${t.emoji}</div>
+      <div><h2>${esc(t.name)}</h2><small>${done ? "All done — beautiful! 🌷" : c+" of "+n+" · about 10 minutes"}</small></div>
+      <button class="x" data-act="close" aria-label="Close">✕</button>
+    </div>
+    ${state.low
+      ? `<div class="note" style="background:#F1EAFF">🌙 <b>Low-energy version.</b> Just a few small things that make the biggest difference. Doing a little still counts.</div>`
+      : `<div class="note" style="background:#FFF1E6">Set a 10-minute timer and do what you can. Anything you skip is okay to leave for later. 💛</div>`}
+    ${askHere ? `
+      <div class="note" style="background:#E6F8F5;margin-top:4px">
+        <b>🧺 Doing a load of laundry today?</b><br><span style="color:var(--soft)">If yes, a laundry step will show up in each tidy.</span>
+        <div class="ask" style="margin-top:10px">
+          <button class="yes" data-act="laundry-yes">Yes, one load</button>
+          <button class="no" data-act="laundry-no" style="background:#fff">Not today</button>
+        </div>
+      </div>` : ""}
+    ${mainList(t).length ? itemsHTML(t, mainList(t), "") : `<div class="empty-note">No tasks yet — add some in Settings.</div>`}
+    ${lList.length ? `<div class="sub">🧺 Laundry</div>${itemsHTML(t, lList, "laundry")}` : ""}
+    <div class="sheet-foot">
+      <button class="btn ghost" data-act="clear" data-id="${id}">Uncheck all</button>
+      <button class="btn" data-act="close">${done ? "Done 🎉" : "Done for now"}</button>
+    </div>`;
+}
+function renderConfirm(c){
+  sheet.innerHTML = `
+    <div class="grab"></div>
+    <div class="sheet-head">
+      <div class="emo" style="background:var(--butter)">${c.emoji}</div>
+      <div><h2>${c.title}</h2></div>
+      <button class="x" data-act="close" aria-label="Close">✕</button>
+    </div>
+    <div class="note" style="background:#fff">${c.msg}</div>
+    <div class="sheet-foot">
+      <button class="btn ghost" data-act="close">Never mind</button>
+      <button class="btn warm" data-act="${c.yes}" ${c.id ? `data-id="${c.id}"` : ""}>${c.yesLabel}</button>
+    </div>`;
+}
+function rerenderSheet(){
+  if (!openSheet) return;
+  if (typeof openSheet === "string") renderTidySheet(openSheet); else renderConfirm(openSheet);
+}
+function askConfirm(c){ openSheet = c; renderConfirm(c); showSheet(); }
+
+/* ================= Feedback ================= */
+let toastTimer;
+function toast(msg){
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>el.classList.remove("show"), 2600);
+}
+function confetti(){
+  const colors = ["#FFB5A7","#D9C9F8","#FFEAA8","#A8E8E3","#C2F0D2"];
+  for (let i=0;i<60;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100+"vw";
+    c.style.background = colors[i%colors.length];
+    c.style.animationDuration = (1.8+Math.random()*1.6)+"s";
+    c.style.animationDelay = (Math.random()*0.4)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(), 4000);
+  }
+}
+function celebrateDay(){
+  state.partyShown = true; save();
+  closeSheet();
+  document.getElementById("party").classList.add("show");
+  confetti();
+}
+function focusSoon(id){ const el = document.getElementById(id); if (el) el.focus(); }
+
+/* ================= Actions ================= */
+// Save whatever is typed in a task or name field (safe to call more than once)
+function commitField(inp){
+  if (inp.dataset.edit){
+    const t = getList(inp.dataset.edit).find(x=>x.id===inp.dataset.id), v = inp.value.trim();
+    if (t && v && v !== t.text){ t.text = v; save(); }
+  } else if (inp.dataset.field === "name"){
+    const t = tidy(inp.dataset.id), v = inp.value.trim();
+    if (t && v && v !== t.name){ t.name = v; save(); }
+  }
+}
+
+function handle(b){
+  const act = b.dataset.act, id = b.dataset.id;
+  switch (act){
+    case "tab": tab = b.dataset.tab; editing = null; closeSheet(); window.scrollTo(0,0); break;
+    case "open": openSheet = id; renderTidySheet(id); showSheet(); break;
+    case "close": closeSheet(); break;
+    case "party-close": document.getElementById("party").classList.remove("show"); break;
+
+    case "low":
+      state.low = !state.low; save();
+      toast(state.low ? "Low-energy mode on — go easy today 🌙" : "Full tidies are back ✨");
+      break;
+
+    case "check": {
+      const t = tidy(id), k = b.dataset.k, wasDone = isDone(t), wasStage = laundryStage(), arr = checksOf(id);
+      const i = arr.indexOf(k); i >= 0 ? arr.splice(i,1) : arr.push(k);
+      save();
+      if (!wasDone && isDone(t)){
+        if (doneCount() === active().length && !state.partyShown){ render(); setTimeout(celebrateDay, 350); return; }
+        toast(state.low ? pick(LOW_CHEERS) : pick(TIDY_CHEERS)); confetti();
+      } else if (state.laundry === true && wasStage < 4 && laundryStage() === 4){
+        toast("Laundry's all done for today! 🧺✨");
+      }
+      break;
+    }
+    case "clear": state.checks[id] = []; save(); break;
+
+    case "laundry-yes": state.laundry = true; save(); toast("One load today — steps added to your tidies 🧺"); break;
+    case "laundry-no":  state.laundry = false; save(); toast("No laundry today — enjoy the break 🌤️"); break;
+    case "laundry-reask": state.laundry = null; save(); break;
+
+    case "add-todo": {
+      const inp = document.getElementById("todo-input"), v = inp ? inp.value.trim() : "";
+      if (!v){ if (inp) inp.focus(); return; }
+      state.todos.push({id:newId(), text:v, done:false}); save();
+      render(); focusSoon("todo-input"); return;
+    }
+    case "todo": { const t = state.todos.find(x=>x.id===id); if (t){ t.done = !t.done; save(); if (t.done) toast("Checked off! ✅"); } break; }
+    case "todo-del": state.todos = state.todos.filter(x=>x.id!==id); save(); break;
+
+    case "fresh":
+      askConfirm({emoji:"🌱", title:"Start a fresh day?", yes:"do-fresh", yesLabel:"Start fresh",
+        msg:"This unchecks all your tidies and asks about laundry again. Your unfinished to-dos and your settings stay just as they are."});
+      return;
+    case "do-fresh": startNewDay(); closeSheet(); window.scrollTo(0,0); toast("Fresh start — you've got this 🌱"); break;
+
+    /* ---- Settings: tidies ---- */
+    case "edit-tidy": editing = id; window.scrollTo(0,0); break;
+    case "back-settings": editing = null; window.scrollTo(0,0); break;
+    case "toggle-tidy": { const t = tidy(id); t.active = !t.active; save(); toast(t.active ? t.name+" is on ✨" : t.name+" is resting for now 🌙"); break; }
+    case "tidy-up": {
+      const i = state.tidies.findIndex(x=>x.id===id);
+      if (i > 0){ [state.tidies[i-1], state.tidies[i]] = [state.tidies[i], state.tidies[i-1]]; save(); }
+      break;
+    }
+    case "add-tidy": {
+      const nid = newId(), lk = "list-"+nid;
+      state.lists[lk] = {full:[], low:[]};
+      state.tidies.push({id:nid, name:"New Tidy", emoji:"✨", color:"mint", when:"afternoon", list:lk, laundry:[], active:true});
+      save(); editing = nid; window.scrollTo(0,0);
+      render(); { const el = document.getElementById("tidy-name"); if (el){ el.focus(); el.select(); } }
+      toast("New tidy added — give it a name ✨");
+      return;
+    }
+    case "set-emoji": tidy(id).emoji = b.dataset.v; save(); break;
+    case "set-color": tidy(id).color = b.dataset.v; save(); break;
+    case "set-when":  tidy(id).when  = b.dataset.v; save(); break;
+    case "own-list": {
+      const t = tidy(id), L = listOf(t), lk = "list-"+newId();
+      state.lists[lk] = {full:mk(L.full.map(x=>x.text)), low:mk(L.low.map(x=>x.text))};
+      t.list = lk; state.checks[id] = []; save(); toast(t.name+" has its own list now");
+      break;
+    }
+    case "delete-tidy":
+      askConfirm({emoji:"🗑️", title:"Delete "+esc(tidy(id).name)+"?", yes:"do-delete", yesLabel:"Delete", id,
+        msg:"This removes the tidy and its tasks for good. If you just want a break from it, you can turn it off instead."});
+      return;
+    case "do-delete": {
+      const t = tidy(id);
+      if (t){
+        state.tidies = state.tidies.filter(x=>x.id!==id);
+        if (!state.tidies.some(x=>x.list===t.list)) delete state.lists[t.list];
+        delete state.checks[id]; save(); toast("Tidy deleted");
+      }
+      editing = null; closeSheet(); window.scrollTo(0,0); break;
+    }
+
+    /* ---- Settings: tasks ---- */
+    case "add-task": {
+      const path = b.dataset.path, inpId = "add-"+path.replace(":","-"), inp = document.getElementById(inpId);
+      const v = inp ? inp.value.trim() : "";
+      if (!v){ if (inp) inp.focus(); return; }
+      getList(path).push({id:newId(), text:v}); save();
+      render(); focusSoon(inpId); toast("Task added ✓"); return;
+    }
+    case "up": {
+      const list = getList(b.dataset.path), i = list.findIndex(x=>x.id===id);
+      if (i > 0){ [list[i-1], list[i]] = [list[i], list[i-1]]; save(); }
+      break;
+    }
+    case "del": {
+      const list = getList(b.dataset.path), i = list.findIndex(x=>x.id===id);
+      if (i >= 0){ list.splice(i,1); save(); toast("Task removed"); }
+      break;
+    }
+    case "restore":
+      askConfirm({emoji:"↺", title:"Restore the originals?", yes:"do-restore", yesLabel:"Restore",
+        msg:"This brings back the original four tidies and their tasks, replacing your changes, and unchecks today. Your to-dos stay."});
+      return;
+    case "do-restore": buildDefaults(); state.checks = {}; save(); editing = null; closeSheet(); toast("Original tidies restored"); break;
+  }
+  render(); rerenderSheet();
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]");
+  if (!b) { if (e.target === overlay) closeSheet(); return; }
+  if (b.disabled) return;
+  // Save any field still being edited before the screen redraws
+  const a = document.activeElement;
+  if (a && a.tagName === "INPUT") commitField(a);
+  handle(b);
+});
+
+// Save edits when leaving a field
+document.addEventListener("change", e => { if (e.target.tagName === "INPUT") commitField(e.target); });
+
+// Enter key: add the item, or finish editing a field
+document.addEventListener("keydown", e => {
+  if (e.key !== "Enter" || e.target.tagName !== "INPUT") return;
+  e.preventDefault();
+  const inp = e.target;
+  if (inp.dataset.enter){
+    const btn = document.querySelector(`button[data-act="${inp.dataset.enter}"]${inp.dataset.path ? `[data-path="${inp.dataset.path}"]` : ""}`);
+    if (btn) handle(btn);
+  } else {
+    commitField(inp); inp.blur(); toast("Saved ✓");
+    if (inp.dataset.field === "name") render();
+  }
+});
+
+/* New-day check: on open, on returning to the app, and every minute */
+function tick(){ if (rollover()){ closeSheet(); render(); } }
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden){ const a = document.activeElement; if (a && a.tagName === "INPUT") return; tick(); render(); }
+});
+setInterval(tick, 60000);
+
+load(); render();
+</script>
+</body>
+</html>
